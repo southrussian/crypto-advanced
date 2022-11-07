@@ -14,7 +14,18 @@ struct HomeView: View {
                 .ignoresSafeArea()
             
             VStack {
-                Text("Header")
+                HStack {
+                    CircleButton(iconName: "info.bubble")
+                    Spacer()
+                    Text("Live Prices")
+                        .font(.headline)
+                        .fontWeight(.semibold)
+                        .foregroundColor(Color.theme.accent)
+                    Spacer()
+                    CircleButton(iconName: "chevron.right")
+                }
+                .padding(.horizontal)
+                
                 Spacer(minLength: 0)
             }
         }

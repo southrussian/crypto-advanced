@@ -14,6 +14,7 @@
 		5848DB64291915ED00B597E9 /* readme.md in Resources */ = {isa = PBXBuildFile; fileRef = 5848DB63291915ED00B597E9 /* readme.md */; };
 		5848DB672919164E00B597E9 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5848DB662919164E00B597E9 /* Color.swift */; };
 		5848DB6D2919234F00B597E9 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5848DB6C2919234F00B597E9 /* HomeView.swift */; };
+		5848DB712919282700B597E9 /* CircleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5848DB702919282700B597E9 /* CircleButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +26,7 @@
 		5848DB63291915ED00B597E9 /* readme.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = readme.md; sourceTree = "<group>"; };
 		5848DB662919164E00B597E9 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		5848DB6C2919234F00B597E9 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		5848DB702919282700B597E9 /* CircleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,8 +122,17 @@
 		5848DB6E2919267600B597E9 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				5848DB6F2919281000B597E9 /* CircleButton */,
 			);
 			path = Components;
+			sourceTree = "<group>";
+		};
+		5848DB6F2919281000B597E9 /* CircleButton */ = {
+			isa = PBXGroup;
+			children = (
+				5848DB702919282700B597E9 /* CircleButton.swift */,
+			);
+			path = CircleButton;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -195,6 +206,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5848DB712919282700B597E9 /* CircleButton.swift in Sources */,
 				5848DB562919137A00B597E9 /* ContentView.swift in Sources */,
 				5848DB6D2919234F00B597E9 /* HomeView.swift in Sources */,
 				5848DB542919137A00B597E9 /* CryptoEdvancedApp.swift in Sources */,
