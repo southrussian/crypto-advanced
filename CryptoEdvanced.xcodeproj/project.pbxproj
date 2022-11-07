@@ -13,6 +13,7 @@
 		5848DB62291914F200B597E9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5848DB61291914F200B597E9 /* Assets.xcassets */; };
 		5848DB64291915ED00B597E9 /* readme.md in Resources */ = {isa = PBXBuildFile; fileRef = 5848DB63291915ED00B597E9 /* readme.md */; };
 		5848DB672919164E00B597E9 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5848DB662919164E00B597E9 /* Color.swift */; };
+		5848DB6D2919234F00B597E9 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5848DB6C2919234F00B597E9 /* HomeView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +24,7 @@
 		5848DB61291914F200B597E9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = ../../../../Downloads/Resources/Assets.xcassets; sourceTree = "<group>"; };
 		5848DB63291915ED00B597E9 /* readme.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = readme.md; sourceTree = "<group>"; };
 		5848DB662919164E00B597E9 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
+		5848DB6C2919234F00B597E9 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +58,7 @@
 			isa = PBXGroup;
 			children = (
 				5848DB652919163A00B597E9 /* Extensions */,
+				5848DB682919230600B597E9 /* Core */,
 				5848DB532919137A00B597E9 /* CryptoEdvancedApp.swift */,
 				5848DB552919137A00B597E9 /* ContentView.swift */,
 				5848DB61291914F200B597E9 /* Assets.xcassets */,
@@ -79,6 +82,46 @@
 				5848DB662919164E00B597E9 /* Color.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		5848DB682919230600B597E9 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				5848DB6E2919267600B597E9 /* Components */,
+				5848DB692919232800B597E9 /* Home */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		5848DB692919232800B597E9 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				5848DB6B2919233600B597E9 /* ViewModel */,
+				5848DB6A2919232E00B597E9 /* View */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		5848DB6A2919232E00B597E9 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				5848DB6C2919234F00B597E9 /* HomeView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		5848DB6B2919233600B597E9 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		5848DB6E2919267600B597E9 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Components;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -153,6 +196,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5848DB562919137A00B597E9 /* ContentView.swift in Sources */,
+				5848DB6D2919234F00B597E9 /* HomeView.swift in Sources */,
 				5848DB542919137A00B597E9 /* CryptoEdvancedApp.swift in Sources */,
 				5848DB672919164E00B597E9 /* Color.swift in Sources */,
 			);

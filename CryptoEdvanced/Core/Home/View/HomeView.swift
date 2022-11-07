@@ -1,5 +1,5 @@
 //
-//  ContentView.swift
+//  HomeView.swift
 //  CryptoEdvanced
 //
 //  Created by Danil Peregorodiev on 07.11.2022.
@@ -7,22 +7,26 @@
 
 import SwiftUI
 
-struct ContentView: View {
+struct HomeView: View {
     var body: some View {
         ZStack {
             Color.theme.background
                 .ignoresSafeArea()
             
-            VStack(spacing: 20) {
-                Text("Accent")
-                    .foregroundColor(Color.theme.accent)
+            VStack {
+                Text("Header")
+                Spacer(minLength: 0)
             }
         }
     }
 }
 
-struct ContentView_Previews: PreviewProvider {
+struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        NavigationView {
+            HomeView()
+                .navigationBarHidden(true)
+        }
+        
     }
 }
