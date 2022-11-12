@@ -8,13 +8,23 @@
 import Foundation
 
 extension Double {
-    private var currentFormatted: NumberFormatter {
+    
+    /// Double to Currency (2-6 decimals)
+    private var currentFormatted6: NumberFormatter {
         let formatter = NumberFormatter()
         formatter.usesGroupingSeparator = true
         formatter.numberStyle = .currency
-        formatter.locale = .current
-        formatter.currencyCode = "usd"
-        formatter.currencySymbol = "$"
+//        formatter.locale = .current
+//        formatter.currencyCode = "usd"
+//        formatter.currencySymbol = "$"
+        
+        formatter.minimumFractionDigits = 2
+        formatter.maximumFractionDigits = 6
         return formatter
+    }
+    
+    func asCurrencyWithSixDecimals() -> String {
+        let number = NSNumber(value: self)
+        return currentFormatted6.string(from: number) ?? "$0.00"
     }
 }
