@@ -23,9 +23,9 @@ extension Double {
         return formatter
     }
     
-    func asCurrencyWithSixDecimals() -> String {
+    func asCurrencyWithTwoDecimals() -> String {
         let number = NSNumber(value: self)
-        return currentFormatted6.string(from: number) ?? "$0.00"
+        return currentFormatted2.string(from: number) ?? "$0.00"
     }
     
     func stringAsNumber() -> String {
