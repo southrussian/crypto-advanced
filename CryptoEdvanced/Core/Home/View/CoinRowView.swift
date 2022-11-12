@@ -28,7 +28,15 @@ struct CoinRowView: View {
 
 struct CoinRowView_Previews: PreviewProvider {
     static var previews: some View {
-        CoinRowView(coin: dev.coin, showHoldingColumn: true)
+        Group {
+            CoinRowView(coin: dev.coin, showHoldingColumn: true)
+                .previewLayout(.sizeThatFits)
+            
+            CoinRowView(coin: dev.coin, showHoldingColumn: true)
+                .previewLayout(.sizeThatFits)
+                .preferredColorScheme(.light)
+        }
+        
     }
 }
 
