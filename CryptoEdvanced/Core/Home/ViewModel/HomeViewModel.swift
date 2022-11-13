@@ -17,4 +17,6 @@ class HomeViewModel: ObservableObject {
             self.portfolioCoins.append(DevPreview.instance.coin)
         }
     }
+    
+    
 }
