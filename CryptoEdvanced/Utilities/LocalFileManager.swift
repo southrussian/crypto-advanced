@@ -14,6 +14,8 @@ class localFileManager {
     
     func saveImage(image: UIImage, imageName: String, folderName: String) {
         
+        createFolderIfNeeded(folderName: folderName)
+        
         guard
             let data = image.pngData(),
             let url = getURLForImage(imageName: imageName, folderName: folderName)
@@ -24,6 +26,15 @@ class localFileManager {
         } catch let error {
             print("Error saving image: \(error)")
         }
+    }
+    
+    func getImage(imageName: String, folderName: String) -> UIImage? {
+        
+        guard let url = getURLForImage(imageName: imageName, folderName: folderName),
+              FileManager.default.fileExists(atPath: url.path) else {
+            return nil
+        }
+        return UIImage(contentsOfFile: url.path)
     }
     
     private func createFolderIfNeeded(folderName: String) {
