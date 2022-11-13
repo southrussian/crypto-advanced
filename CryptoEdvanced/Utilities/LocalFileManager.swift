@@ -22,7 +22,19 @@ class localFileManager {
         do {
             try data.write(to: url)
         } catch let error {
-            print("Error saving image \(error)")
+            print("Error saving image: \(error)")
+        }
+    }
+    
+    private func createFolderIfNeeded(folderName: String) {
+        guard let url = getURLForFolder(name: folderName) else { return }
+        
+        if !FileManager.default.fileExists(atPath: url.path) {
+            do {
+                try FileManager.default.createDirectory(at: url, withIntermediateDirectories: true, attributes: nil)
+            } catch let error {
+                print("Error creating directory: \(error)")
+            }
         }
     }
     
