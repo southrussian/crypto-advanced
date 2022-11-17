@@ -20,6 +20,7 @@ struct HomeView: View {
             VStack {
                 HomeHeader
                     .padding(.horizontal)
+                SearchBarView(SearchedText: $vm.searchText)
                 FollowingExplanations
                 if !showPortfolio {
                     List {
