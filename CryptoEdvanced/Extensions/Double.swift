@@ -44,19 +44,19 @@ extension Double {
         case 1_000_000_000_000...:
             let formatted = num / 1_000_000_000_000
             let stringFormatted = formatted.stringAsNumber()
-            return "\(sign)\(stringFormatted)Tr"
+            return "\(sign)\(stringFormatted) трлн"
         case 1_000_000_000...:
             let formatted = num / 1_000_000_000
             let stringFormatted = formatted.stringAsNumber()
-            return "\(sign)\(stringFormatted)Bn"
+            return "\(sign)\(stringFormatted) млрд"
         case 1_000_000...:
             let formatted = num / 1_000_000
             let stringFormatted = formatted.stringAsNumber()
-            return "\(sign)\(stringFormatted)M"
+            return "\(sign)\(stringFormatted) млн"
         case 1_000...:
             let formatted = num / 1_000
             let stringFormatted = formatted.stringAsNumber()
-            return "\(sign)\(stringFormatted)K"
+            return "\(sign)\(stringFormatted) тыс."
         case 0...:
             return self.stringAsNumber()
             
