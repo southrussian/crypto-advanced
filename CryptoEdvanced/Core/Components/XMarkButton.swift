@@ -5,7 +5,7 @@
 //  Created by Danil Peregorodiev on 26.11.2022.
 //
 
-// код не нужен, presentationMode устарел
+
 
 import SwiftUI
 
