@@ -39,13 +39,6 @@ class HomeViewModel: ObservableObject {
             }
             .store(in: &cancellables)
         
-        marketDataService.$marketData
-            .map(mapGlobalMarketData)
-            .sink { [weak self] (returnedStats) in
-                self?.statistics = returnedStats
-            }
-            .store(in: &cancellables)
-        
         $allCoins
             .combineLatest(portfolioDataService.$savedEntities)
             .map { (coinModels, portfolioEntities) -> [CoinModel] in
@@ -59,6 +52,14 @@ class HomeViewModel: ObservableObject {
             }
             .sink { [weak self] (returnedCoins) in
                 self?.portfolioCoins = returnedCoins
+            }
+            .store(in: &cancellables)
+        
+        marketDataService.$marketData
+            .combineLatest($portfolioCoins)
+            .map(mapGlobalMarketData)
+            .sink { [weak self] (returnedStats) in
+                self?.statistics = returnedStats
             }
             .store(in: &cancellables)
         
@@ -80,7 +81,7 @@ class HomeViewModel: ObservableObject {
         }
     }
     
-    private func mapGlobalMarketData(marketDataModel: MarketDataModel?) -> [StatisticModel] {
+    private func mapGlobalMarketData(marketDataModel: MarketDataModel?, portfolioCoins: [CoinModel]) -> [StatisticModel] {
         
         var stats: [StatisticModel] = []
         guard let data = marketDataModel else {
@@ -92,8 +93,23 @@ class HomeViewModel: ObservableObject {
         let volume = StatisticModel(title: "Объем за сутки", value: data.volume)
 //                stats.append(volume)
         let btcDominance = StatisticModel(title: "Процент BTC", value: data.btcDominance)
-        let portfolio = StatisticModel(title: "Портфолио", value: "$0.00", percetangeChange: 0)
         
+        let portfolioValue = portfolioCoins.map { (coin) in
+            return coin.currentHoldingsValue
+        }
+            .reduce(0, +)
+        
+        let previousValue = portfolioCoins.map { coin -> Double in
+            let currentValue = coin.currentHoldingsValue
+            let percentChange = coin.priceChangePercentage24H / 100
+            let previousValue = currentValue / (1 + percentChange)
+            return previousValue
+        }
+            .reduce(0, +)
+        let percetangeChange = (portfolioValue - previousValue) / previousValue * 100
+        let portfolio = StatisticModel(title: "Портфолио", value: portfolioValue.asCurrencyWithTwoDecimals(), percetangeChange: percetangeChange)
+
+                
         stats.append(contentsOf: [marketCap, volume, btcDominance, portfolio])
         
         return stats
