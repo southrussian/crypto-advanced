@@ -9,10 +9,12 @@ import Foundation
 import Combine
 
 class HomeViewModel: ObservableObject {
-    @Published var searchText: String = ""
+    
+    @Published var statistics: [StatisticModel] = []
     @Published var allCoins: [CoinModel] = []
     @Published var portfolioCoins: [CoinModel] = []
-    @Published var statistics: [StatisticModel] = []
+    @Published var isLoading: Bool = false
+    @Published var searchText: String = ""
     
     private let coinDataService = CoinDataService()
     private let marketDataService = MarketDataService()
@@ -52,13 +54,20 @@ class HomeViewModel: ObservableObject {
             .map(mapGlobalMarketData)
             .sink { [weak self] (returnedStats) in
                 self?.statistics = returnedStats
+                self?.isLoading = false
             }
-            .store(in: &cancellables)
-        
+            .store(in: &cancellables)        
     }
     
     func updatePotfolio(coin: CoinModel, amount: Double) {
         portfolioDataService.updatePortfolio(coin: coin, amount: amount)
+    }
+    
+    func reloadData() {
+        isLoading = true
+        coinDataService.getCoin()
+        marketDataService.getData()
+        HapticManager.notification(type: .success)
     }
     
     private func filterCoins(text: String, coins: [CoinModel]) -> [CoinModel] {
@@ -103,7 +112,7 @@ class HomeViewModel: ObservableObject {
         
         let previousValue = portfolioCoins.map { coin -> Double in
             let currentValue = coin.currentHoldingsValue
-            let percentChange = coin.priceChangePercentage24H / 100
+            let percentChange = ((coin.priceChangePercentage24H ?? 0) / 100)
             let previousValue = currentValue / (1 + percentChange)
             return previousValue
         }
