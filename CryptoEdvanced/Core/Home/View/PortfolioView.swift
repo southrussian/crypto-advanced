@@ -42,21 +42,21 @@ struct PortfolioView: View {
                     if selectedCoin != nil {
                         VStack(spacing: 20) {
                             HStack {
-                                Text("Current price of \(selectedCoin?.symbol.uppercased() ?? "")")
+                                Text("Текущая цена \(selectedCoin?.symbol.uppercased() ?? ""):")
                                 Spacer()
                                 Text(selectedCoin?.currentPrice.stringAsNumber() ?? "$0.00")
                             }
                             Divider()
                             HStack {
-                                Text("Amount in your portfolio:")
+                                Text("В вашем портфолио:")
                                 Spacer()
-                                TextField("Ex: 1.4", text: $quantityText)
+                                TextField("Введите значение", text: $quantityText)
                                     .multilineTextAlignment(.trailing)
                                     .keyboardType(.decimalPad)
                             }
                             Divider()
                             HStack {
-                                Text("Current Value:")
+                                Text("Общая стоимость:")
                                 Spacer()
                                 Text(getCurrentValue().asCurrencyWithTwoDecimals())
                             }
@@ -82,16 +82,22 @@ struct PortfolioView: View {
                     HStack(spacing: 10) {
                         Image(systemName: "checkmark")
                             .opacity(showCheckmark ? 1.0 : 0.0)
+                            .foregroundColor(Color.theme.accent)
                         Button {
                             saveButtonPressed()
                         } label: {
-                            Text("Save")
+                            Text("Сохранить")
                         }
                         .opacity((selectedCoin != nil && selectedCoin?.currentHoldings != Double(quantityText)) ? 1.0 : 0.0)
                     }
                     .font(.headline)
                 }
             })
+            onChange(of: vm.searchText) { newValue in
+                if newValue == "" {
+                    removeSelectedCoin()
+                }
+            }
         }
     }
 }
