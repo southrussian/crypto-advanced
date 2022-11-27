@@ -34,17 +34,6 @@ class HomeViewModel: ObservableObject {
             .combineLatest(coinDataService.$allCoins)
             .debounce(for: .seconds(0.5), scheduler: DispatchQueue.main)
             .map(filterCoins)
-//            .map { (text, startingCoins) -> [CoinModel] in
-//                guard !text.isEmpty else {
-//                    return startingCoins
-//                }
-//                let lowercasedText = text.lowercased()
-//                return startingCoins.filter { (coin) -> Bool in
-//                    return coin.name.lowercased().contains(lowercasedText) ||
-//                    coin.symbol.lowercased().contains(lowercasedText) ||
-//                    coin.id.lowercased().contains(lowercasedText)
-//                }
-//            }
             .sink { [weak self] (returnedCoins) in
                 self?.allCoins = returnedCoins
             }
@@ -57,6 +46,26 @@ class HomeViewModel: ObservableObject {
             }
             .store(in: &cancellables)
         
+        $allCoins
+            .combineLatest(portfolioDataService.$savedEntities)
+            .map { (coinModels, portfolioEntities) -> [CoinModel] in
+                coinModels
+                    .compactMap { (coin) -> CoinModel? in
+                        guard let entity = portfolioEntities.first(where: { $0.coinID == coin.id }) else {
+                            return nil
+                        }
+                        return coin.updateHoldings(amount: entity.amount)
+                    }
+            }
+            .sink { [weak self] (returnedCoins) in
+                self?.portfolioCoins = returnedCoins
+            }
+            .store(in: &cancellables)
+        
+    }
+    
+    func updatePotfolio(coin: CoinModel, amount: Double) {
+        portfolioDataService.updatePortfolio(coin: coin, amount: amount)
     }
     
     private func filterCoins(text: String, coins: [CoinModel]) -> [CoinModel] {
