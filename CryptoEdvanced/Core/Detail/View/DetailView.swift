@@ -60,7 +60,17 @@ struct DetailView: View {
             .padding()
         }
         .navigationTitle(vm.coin.name)
-        .toolbar(content: <#T##() -> View#>)
+        .toolbar {
+            ToolbarItem(placement: .navigationBarTrailing) {
+                HStack {
+                    Text(vm.coin.symbol.uppercased())
+                        .font(.headline)
+                    .foregroundColor(Color.theme.secondaryText)
+                    CoinImageView(coin: vm.coin)
+                        .frame(width: 25, height: 25)
+                }
+            }
+        }
     }
 }
 
