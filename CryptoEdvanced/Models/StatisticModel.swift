@@ -13,11 +13,11 @@ struct StatisticModel: Identifiable {
     let value: String
     let percetangeChange: Double?
     
-    init(title: String, value: String, percetangeChange: Double? = nil) {
+    init(title: String, value: String, percentageChange: Double? = nil) {
         self.title = title
         self.value = value
-        self.percetangeChange = percetangeChange
+        self.percetangeChange = percentageChange
     }
 }
 
-let newModel = StatisticModel(title: "", value: "", percetangeChange: nil)
+let newModel = StatisticModel(title: "", value: "", percentageChange: nil)

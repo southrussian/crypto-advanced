@@ -18,9 +18,9 @@ class DevPreview {
     private init() {
         
     }
-    let stat1 = StatisticModel(title: "Market Cap", value: "$12.5Bn", percetangeChange: -25.34)
+    let stat1 = StatisticModel(title: "Market Cap", value: "$12.5Bn", percentageChange: -25.34)
     let stat2 = StatisticModel(title: "Total Value", value: "$1.23Tr")
-    let stat3 = StatisticModel(title: "Potfolio Value", value: "$50.6k", percetangeChange: 17.9)
+    let stat3 = StatisticModel(title: "Potfolio Value", value: "$50.6k", percentageChange: 17.9)
 
     let homeVM = HomeViewModel()
     let coin = CoinModel(
