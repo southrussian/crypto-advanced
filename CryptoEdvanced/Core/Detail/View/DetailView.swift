@@ -25,7 +25,7 @@ struct DetailView: View {
             VStack(spacing: 20) {
                 Text("BTC")
                     .frame(height: 150)
-                Text("Overview")
+                Text("Обзор")
                     .foregroundColor(Color.theme.accent)
                     .font(.title)
                     .bold()
@@ -41,7 +41,7 @@ struct DetailView: View {
                     }
                 }
                 
-                Text("Additional Details")
+                Text("Дополнительно")
                     .foregroundColor(Color.theme.accent)
                     .font(.title)
                     .bold()
@@ -60,6 +60,7 @@ struct DetailView: View {
             .padding()
         }
         .navigationTitle(vm.coin.name)
+        .toolbar(content: <#T##() -> View#>)
     }
 }
 
