@@ -23,6 +23,7 @@ struct CoinRowView: View {
             rightColumn
         }
         .font(.subheadline)
+        .padding(.vertical, 1)
     }
 }
 
@@ -52,8 +53,8 @@ extension CoinRowView {
                 CoinImageView(coin: coin)
                 .frame(width: 30, height: 30)
             Text(coin.symbol.uppercased())
-                .font(.headline)
-                .bold()
+                .font(.callout)
+                .fontWeight(.bold)
                 .foregroundColor(Color.theme.accent)
                 .padding(.leading, 7)
         }
@@ -62,7 +63,10 @@ extension CoinRowView {
     private var centerColumn: some View {
         VStack(alignment: .trailing) {
             Text(coin.currentHoldingsValue.asCurrencyWithTwoDecimals())
+                .font(.callout)
+                .fontWeight(.bold)
             Text((coin.currentHoldings ?? 0).stringAsNumber())
+                .bold()
         }
         .foregroundColor(Color.theme.accent)
     }
@@ -70,7 +74,8 @@ extension CoinRowView {
     private var rightColumn: some View {
         VStack {
             Text(coin.currentPrice.asCurrencyWithTwoDecimals())
-                .bold()
+                .font(.callout)
+                .fontWeight(.bold)
                 .foregroundColor(Color.theme.accent)
             Text(coin.priceChangePercentage24H?.stringAsPercent() ?? "")
                 .foregroundColor(

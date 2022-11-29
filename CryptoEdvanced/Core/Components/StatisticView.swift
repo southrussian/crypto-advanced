@@ -16,9 +16,12 @@ struct StatisticView: View {
             Text(stat.title)
                 .font(.caption)
                 .foregroundColor(Color.theme.secondaryText)
+                .multilineTextAlignment(.leading)
             Text(stat.value)
                 .foregroundColor(Color.theme.accent)
-                .font(.headline)
+                .font(.callout)
+                .fontWeight(.bold)
+                .multilineTextAlignment(.leading)
             
             HStack(spacing: 4) {
                 Image(systemName: "triangle.fill")
