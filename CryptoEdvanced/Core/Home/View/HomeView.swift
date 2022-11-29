@@ -97,11 +97,44 @@ extension HomeView {
     }
     private var FollowingExplanations: some View {
         HStack {
-            Text("Валюта")
+            HStack {
+                Text("Валюта")
+                Image(systemName: "chevron.down")
+                    .opacity((vm.sortOption == .rank || vm.sortOption == .rankReversed) ? 1.0 : 0.0)
+                    .rotationEffect(Angle(degrees: vm.sortOption == .rank ? 0 : 180))
+            }
+            .onTapGesture {
+                withAnimation(.default) {
+                    vm.sortOption = vm.sortOption == .rank ? .rankReversed : .rank
+                }
+            }
+            
             Spacer()
-            Text(showPortfolio ? "Накопления" : "")
-            Text("Цена")
-                .frame(width: UIScreen.main.bounds.width / 3.6, alignment: .trailing)
+            if showPortfolio {
+                HStack {
+                    Text("Накопления")
+                    Image(systemName: "chevron.down")
+                        .opacity((vm.sortOption == .holdings || vm.sortOption == .holdingsReversed) ? 1.0 : 0.0)
+                        .rotationEffect(Angle(degrees: vm.sortOption == .holdings ? 0 : 180))
+                }
+                .onTapGesture {
+                    withAnimation(.default) {
+                        vm.sortOption = vm.sortOption == .holdings ? .holdingsReversed : .holdings
+                    }
+                }
+            }
+            HStack {
+                Text("Цена")
+                Image(systemName: "chevron.down")
+                    .opacity((vm.sortOption == .price || vm.sortOption == .priceReversed) ? 1.0 : 0.0)
+                    .rotationEffect(Angle(degrees: vm.sortOption == .price ? 0 : 180))
+            }
+            .frame(width: UIScreen.main.bounds.width / 3.6, alignment: .trailing)
+            .onTapGesture {
+                withAnimation(.default) {
+                    vm.sortOption = vm.sortOption == .price ? .priceReversed : .price
+                }
+            }
             
             Button {
                 withAnimation(.linear(duration: 2.0)) {
