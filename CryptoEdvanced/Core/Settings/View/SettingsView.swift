@@ -11,6 +11,7 @@ struct SettingsView: View {
     
     let geckoURL = URL(string: "https://www.coingecko.com/ru")!
     let vkURL = URL(string: "https://vk.com/south.russian")!
+    @Environment(\.dismiss) var dismiss
     
     var body: some View {
         NavigationView {
@@ -31,7 +32,7 @@ struct SettingsView: View {
                 Section(header: Text("API приложения")) {
                     Image("coingecko")
                         .resizable()
-                        .frame(width: 400, height: 110)
+                        .frame(width: 300, height: 83)
                         .clipShape(RoundedRectangle(cornerRadius: 15))
                     Link("Страница API", destination: geckoURL)
                 }
@@ -40,7 +41,13 @@ struct SettingsView: View {
             .navigationTitle("Настройки")
             .toolbar {
                 ToolbarItem(placement: .navigationBarLeading) {
-                    XMarkButton()
+                    Button {
+                        dismiss()
+                    } label: {
+                        Image(systemName: "xmark")
+                            .font(.headline)
+                    }
+
                 }
             }
         }
