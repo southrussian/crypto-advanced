@@ -23,8 +23,10 @@ struct DetailView: View {
     var body: some View {
         ScrollView {
             VStack(spacing: 20) {
-                Text("BTC")
+                Spacer()
+                ChartView(coin: vm.coin)
                     .frame(height: 150)
+                Spacer()
                 Text("Обзор")
                     .foregroundColor(Color.theme.accent)
                     .font(.title)

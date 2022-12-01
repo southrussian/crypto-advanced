@@ -28,6 +28,7 @@
 		587FA8AA29366F5C00197F5F /* CoinDetailDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 587FA8A929366F5C00197F5F /* CoinDetailDataService.swift */; };
 		587FA8AC29368D0C00197F5F /* ChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 587FA8AB29368D0C00197F5F /* ChartView.swift */; };
 		587FA8AE2936968900197F5F /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 587FA8AD2936968900197F5F /* Date.swift */; };
+		588566622938B81700516B83 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 588566612938B81700516B83 /* SettingsView.swift */; };
 		5898A04E292B8A32006666AB /* StatisticModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5898A04D292B8A32006666AB /* StatisticModel.swift */; };
 		5898A050292B8C08006666AB /* StatisticView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5898A04F292B8C08006666AB /* StatisticView.swift */; };
 		5898A052292B9949006666AB /* HomeStatsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5898A051292B9949006666AB /* HomeStatsView.swift */; };
@@ -71,6 +72,7 @@
 		587FA8A929366F5C00197F5F /* CoinDetailDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinDetailDataService.swift; sourceTree = "<group>"; };
 		587FA8AB29368D0C00197F5F /* ChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartView.swift; sourceTree = "<group>"; };
 		587FA8AD2936968900197F5F /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
+		588566612938B81700516B83 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		5898A04D292B8A32006666AB /* StatisticModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticModel.swift; sourceTree = "<group>"; };
 		5898A04F292B8C08006666AB /* StatisticView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticView.swift; sourceTree = "<group>"; };
 		5898A051292B9949006666AB /* HomeStatsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeStatsView.swift; sourceTree = "<group>"; };
@@ -158,6 +160,7 @@
 		5848DB682919230600B597E9 /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				5885665F2938B7F700516B83 /* Settings */,
 				587FA8A029365CC700197F5F /* Detail */,
 				5848DB6E2919267600B597E9 /* Components */,
 				5848DB692919232800B597E9 /* Home */,
@@ -200,7 +203,6 @@
 				58D35DBA29213E490083E8AA /* CoinImage */,
 				5848DB6F2919281000B597E9 /* CircleButton */,
 				58E68E7A2926430F00DE444B /* SearchBarView.swift */,
-				5898A04F292B8C08006666AB /* StatisticView.swift */,
 				58390B7329327212003AF4C7 /* XMarkButton.swift */,
 			);
 			path = Components;
@@ -220,7 +222,6 @@
 			children = (
 				587FA8A229365CE400197F5F /* View */,
 				587FA8A129365CD600197F5F /* ViewModel */,
-				587FA8AB29368D0C00197F5F /* ChartView.swift */,
 			);
 			path = Detail;
 			sourceTree = "<group>";
@@ -236,6 +237,24 @@
 			isa = PBXGroup;
 			children = (
 				587FA8A329365CF400197F5F /* DetailView.swift */,
+				5898A04F292B8C08006666AB /* StatisticView.swift */,
+				587FA8AB29368D0C00197F5F /* ChartView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		5885665F2938B7F700516B83 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				588566602938B80A00516B83 /* View */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		588566602938B80A00516B83 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				588566612938B81700516B83 /* SettingsView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -361,6 +380,7 @@
 				587FA8AC29368D0C00197F5F /* ChartView.swift in Sources */,
 				5898A050292B8C08006666AB /* StatisticView.swift in Sources */,
 				58390B7429327212003AF4C7 /* XMarkButton.swift in Sources */,
+				588566622938B81700516B83 /* SettingsView.swift in Sources */,
 				58D35DAD291EF3360083E8AA /* CoinRowView.swift in Sources */,
 				587FA8AE2936968900197F5F /* Date.swift in Sources */,
 				58D35DB3291FD9B90083E8AA /* HomeViewModel.swift in Sources */,
