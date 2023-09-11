@@ -7,7 +7,6 @@
 
 import SwiftUI
 
-
 struct SearchBarView: View {
     
     @Binding var SearchedText: String

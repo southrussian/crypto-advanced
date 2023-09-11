@@ -57,7 +57,7 @@
 		58390B7829338EA5003AF4C7 /* PortfolioContainer.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = PortfolioContainer.xcdatamodel; sourceTree = "<group>"; };
 		58390B7A293391B7003AF4C7 /* PortfolioDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortfolioDataService.swift; sourceTree = "<group>"; };
 		58390B7C293418B6003AF4C7 /* HapticManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticManager.swift; sourceTree = "<group>"; };
-		5848DB502919137A00B597E9 /* CryptoEdvanced.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CryptoEdvanced.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		5848DB502919137A00B597E9 /* CryptoAdvanced.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CryptoAdvanced.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5848DB532919137A00B597E9 /* CryptoEdvancedApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoEdvancedApp.swift; sourceTree = "<group>"; };
 		5848DB552919137A00B597E9 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		5848DB5A2919137C00B597E9 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -115,7 +115,7 @@
 		5848DB512919137A00B597E9 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				5848DB502919137A00B597E9 /* CryptoEdvanced.app */,
+				5848DB502919137A00B597E9 /* CryptoAdvanced.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -306,9 +306,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		5848DB4F2919137A00B597E9 /* CryptoEdvanced */ = {
+		5848DB4F2919137A00B597E9 /* CryptoAdvanced */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 5848DB5E2919137C00B597E9 /* Build configuration list for PBXNativeTarget "CryptoEdvanced" */;
+			buildConfigurationList = 5848DB5E2919137C00B597E9 /* Build configuration list for PBXNativeTarget "CryptoAdvanced" */;
 			buildPhases = (
 				5848DB4C2919137A00B597E9 /* Sources */,
 				5848DB4D2919137A00B597E9 /* Frameworks */,
@@ -318,9 +318,9 @@
 			);
 			dependencies = (
 			);
-			name = CryptoEdvanced;
+			name = CryptoAdvanced;
 			productName = CryptoEdvanced;
-			productReference = 5848DB502919137A00B597E9 /* CryptoEdvanced.app */;
+			productReference = 5848DB502919137A00B597E9 /* CryptoAdvanced.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -338,7 +338,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 5848DB4B2919137A00B597E9 /* Build configuration list for PBXProject "CryptoEdvanced" */;
+			buildConfigurationList = 5848DB4B2919137A00B597E9 /* Build configuration list for PBXProject "CryptoAdvanced" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -351,7 +351,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				5848DB4F2919137A00B597E9 /* CryptoEdvanced */,
+				5848DB4F2919137A00B597E9 /* CryptoAdvanced */,
 			);
 		};
 /* End PBXProject section */
@@ -594,7 +594,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		5848DB4B2919137A00B597E9 /* Build configuration list for PBXProject "CryptoEdvanced" */ = {
+		5848DB4B2919137A00B597E9 /* Build configuration list for PBXProject "CryptoAdvanced" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				5848DB5C2919137C00B597E9 /* Debug */,
@@ -603,7 +603,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		5848DB5E2919137C00B597E9 /* Build configuration list for PBXNativeTarget "CryptoEdvanced" */ = {
+		5848DB5E2919137C00B597E9 /* Build configuration list for PBXNativeTarget "CryptoAdvanced" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				5848DB5F2919137C00B597E9 /* Debug */,
